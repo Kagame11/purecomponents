@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+function Recipe ({drinkers}){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ol>
+      <li>Boil {drinkers} cups of water.</li>
+      <li>Add {drinkers} spoons of tea and {0.5 * drinkers} spoons of spice</li>
+      <li>Add {0.5 * drinkers} cups of milk to boil and sugar to taste</li>
+    </ol>
   );
 }
 
-export default App;
+export default  function App(){
+  return (
+    <section>
+      <h1>Spice Chai Recipe</h1>
+      <h2>For two</h2>
+      <Recipe drinkers={2} />
+      <h2>For a gathering</h2>
+      <Recipe drinkers={4} />
+    </section>
+  )
+}
